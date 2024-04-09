@@ -488,3 +488,4 @@ $RECYCLE.BIN/
 .vs/
 admin/.angular/
 client/.angular/
+API/obj
