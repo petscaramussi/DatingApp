@@ -1,19 +1,22 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { AccountsService } from './_services/accounts.service';
+import { AccountService } from './_services/account.service';
 import { User } from './_models/user';
+import { RouterOutlet } from '@angular/router';
+import { NavComponent } from './nav/nav.component';
+import { NgxSpinnerComponent } from 'ngx-spinner';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css'],
+    standalone: true,
+    imports: [NgxSpinnerComponent, NavComponent, RouterOutlet]
 })
-export class AppComponent implements OnInit{
-  users: any; 
+export class AppComponent implements OnInit {
+  title = 'Dating app';
+  users: any;
 
-  constructor(private http: HttpClient, private accountService: AccountsService) {
-
-  }
+  constructor(private accountService: AccountService) {}
 
   ngOnInit(): void {
     this.setCurrentUser();
@@ -25,5 +28,6 @@ export class AppComponent implements OnInit{
     const user: User = JSON.parse(userString);
     this.accountService.setCurrentUser(user);
   }
+
 
 }
