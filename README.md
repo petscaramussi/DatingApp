@@ -1,4 +1,4 @@
-# DatingApp Udemy Course repository (Legacy)
+# DatingApp
 
 This is the repository for the .Net 7.0, Angular 16 and Bootstrap 5 version of the course refreshed as at August 2023
 
